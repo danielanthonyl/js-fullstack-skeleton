@@ -1,10 +1,10 @@
-FROM node:21.6.1
+FROM oven/bun:1 as base
 
 WORKDIR /app/api
 
-COPY /api/package.json /app/api/
+COPY /api/package.json /api/bun.lockb /app/api/
 
-RUN npm install
+RUN bun install --frozen-lockfile 
 
 COPY /api .
 
@@ -12,4 +12,4 @@ EXPOSE 3000
 
 # RUN npm run prisma-generate
 
-CMD ["npm", "run", "start"]
+CMD ["bun", "run", "start"]

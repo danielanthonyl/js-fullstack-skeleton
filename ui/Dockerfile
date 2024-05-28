@@ -1,13 +1,13 @@
-FROM node:21.6.1
+FROM oven/bun:1 as base
 
 WORKDIR /app/ui
 
-COPY /ui/package.json /app/ui/
+COPY /ui/package.json /ui/bun.lockb /app/ui/
 
-RUN npm install
+RUN bun install --frozen-lockfile 
 
 COPY /ui .
 
-EXPOSE 5173
+EXPOSE 5173/tcp
 
-CMD ["npm", "run", "start"]
+CMD ["bun", "run", "start"]
