@@ -1,7 +1,7 @@
 {
-  "name": "digitalrepublic-api",
+  "name": "api",
   "version": "0.0.1",
-  "description": "DIGITAL REPUBLIC CODE CHALLENGE",
+  "description": "",
   "main": "src/index.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
@@ -10,14 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/Djonatanabreu/digital-republic.git"
+    "url": ""
   },
   "author": "Djonatan Abreu",
   "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/Djonatanabreu/digital-republic.git"
-  },
-  "homepage": "https://gitlab.com/Djonatanabreu/digital-republic.git",
+  "homepage": "",
   "dependencies": {
     "@types/supertest": "^6.0.2",
     "cors": "^2.8.5",

@@ -1,6 +1,6 @@
 {
-  "name": "digitalrepublic-ui",
-  "description": "DIGITAL REPUBLIC CODE CHALLENGE",
+  "name": "ui",
+  "description": "",
   "private": true,
   "version": "0.0.1",
   "type": "module",
