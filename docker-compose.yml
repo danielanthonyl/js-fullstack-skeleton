@@ -1,4 +1,13 @@
 services:
+  database:
+    container_name: database
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    env_file:
+      - ./api/.env
+
   api:
     container_name: api
     build:
@@ -16,6 +25,8 @@ services:
           target: ./app/api/src
           ignore:
             - node_modules/
+    depends_on:
+      - database
 
   ui:
     container_name: ui
@@ -35,4 +46,5 @@ services:
           ignore:
             - node_modules/
     depends_on:
+      - database
       - api

@@ -8,7 +8,7 @@ const { Default } = composeStories(stories);
 test("testing", () => {
   render(<Default />);
 
-  const text = screen.getByText("testing");
+  const text = screen.getByText("loading...");
 
   expect(text).toBeInTheDocument();
 });
