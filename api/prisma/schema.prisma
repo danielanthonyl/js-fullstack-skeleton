@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PaintCan {
+  id     String   @id
+  size   String   @unique
+  liters Float
+}
+
+model OpeningModel {
+  id     String   @id
+  type   String   @unique
+  width  Float
+  height Float
+}
+
+model Opening {
+  id     String   @id
+  Wall   Wall     @relation(fields: [wallId], references: [id])
+  wallId String
+  type   String   @unique
+  width  Float
+  height Float
+}
+
+model Wall {
+  id             String   @id
+  room           Room     @relation(fields: [roomId], references: [id])
+  roomId         String 
+  width          Float
+  height         Float
+  Openings       Opening[]
+}
+
+model Room {
+  id    String @id
+  Walls Wall[]
+}

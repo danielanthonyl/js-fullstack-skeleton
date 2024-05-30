@@ -10,6 +10,6 @@ COPY /api .
 
 EXPOSE 3000
 
-# RUN npm run prisma-generate
+RUN bun prisma generate
 
 CMD ["bun", "run", "start"]

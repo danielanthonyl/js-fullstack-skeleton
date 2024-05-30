@@ -1,13 +1,12 @@
 import express, { json } from "express";
 import cors from "cors";
+import { openingModelRouter } from "./OpeningModel/infrastructure/openingModelRouter";
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: process.env.UI_ROUTE }));
 app.use(json());
 
-app.get("/", (req, res) => {
-  res.json({ test: "test response" });
-});
+app.use(openingModelRouter);
 
 export { app };

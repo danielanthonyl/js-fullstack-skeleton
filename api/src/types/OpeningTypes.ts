@@ -1,0 +1,1 @@
+export type OpeningTypes = 'window' | 'door'
